@@ -87,5 +87,5 @@ function stopImg(){
   clearTimeout(play);
 }
 
-//Budi Geblek
-//Tes
+//Budi Kocak
+//TesTes
