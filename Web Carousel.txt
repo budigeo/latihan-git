@@ -87,5 +87,5 @@ function stopImg(){
   clearTimeout(play);
 }
 
-//Budi azzz
-//Tes coding
+//Budi Kocak
+//TesTes
