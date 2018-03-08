@@ -86,3 +86,6 @@ function showDivs(n) {
 function stopImg(){
   clearTimeout(play);
 }
+
+//Budi Geblek
+//Tes
