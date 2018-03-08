@@ -1,0 +1,88 @@
+html
+<html>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="style.css">
+  	<script src = "coba.js"></script>
+  </head>
+  <body>
+    <button class="right" onclick="plusDivs(-1)">&#10094;</button>
+
+   
+
+    <img class = "slides" src="http://media.nationalgeographic.co.id/daily/640/0/201709121842245/b/foto-9-keajaiban-arsitektur-yang-terinspirasi-dari-alam.jpg" alt="">
+    <img class = "slides" src="https://www.gadis.co.id/img/images/10-Bukti-Alam-Indonesia-Keren-T.jpg" alt="">
+    <img class = "slides" src="http://d1hlu93b47sp1a.cloudfront.net/media/article_image/cover/original/20456-10-foto-alam-mengagumkan-ini-engak-disentuh-photoshop-sama-sekali-keren.jpg" alt="">
+    <img class = "slides" src="http://bagusbenar.com/wp-content/uploads/2017/08/PUISI-TENTANG-KEINDAHAN-ALAM-4-BAIT.jpg" alt="">
+    
+
+	 <button class="right" onclick="plusDivs(+1)">&#10095;</button>
+	 <button class = "btn" onclick="carousel()">Start</button>
+  <button class = "btn" onclick="stopImg()"> Stop </button>
+	
+
+  </body>
+</html>
+
+css
+img{
+  height: 350px;
+  display: block;
+  width: 70%;
+  float: left;
+}
+
+/*.slides{
+  display: none;
+}*/
+
+.right{
+  display: block;
+  width: 5%;
+  height: 350px;
+  float: left;
+}
+
+.btn{
+  display: block;
+  width: 10%;
+  height: 40px;
+  
+}
+
+js
+var slideIndex = 0;
+var play;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("slides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+   play = setTimeout(carousel, 2000); 
+}
+
+showDivs(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("slides");
+    if (n > x.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    x[slideIndex-1].style.display = "block"; 
+}
+
+function stopImg(){
+  clearTimeout(play);
+}
